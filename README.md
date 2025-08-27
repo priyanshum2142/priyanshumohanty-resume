@@ -6,7 +6,7 @@ Built using **HTML, CSS, and JavaScript**, it highlights my journey as a **Robot
 ---
 
 ## 🚀 Live Demo
-👉 [View Portfolio](https://your-username.github.io/portfolio-website/)  
+👉 [View Portfolio](https://priyanshum2142.github.io/priyanshumohanty-resume/)  
 
 ---
 

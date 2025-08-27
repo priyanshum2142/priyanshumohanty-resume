@@ -52,6 +52,7 @@ function initializeApp() {
     setupScrollEffects();
     setupProjectModals();
     setupAnimations();
+    initializeThemeToggle();
     setTimeout(() => {
         typeWriterEffect();
     }, 500);
@@ -295,7 +296,7 @@ function setupAnimations() {
 
     // Observe elements for animation
     const animatedElements = document.querySelectorAll(
-        '.section-title, .about-text, .stat-item, .timeline-item, .skill-category, .project-card, .activity-card, .contact-item'
+        '.section-title, .about-text, .stat-item, .timeline-item, .skill-category, .project-card, .activity-card, .contact-item, .certificate-card'
     );
     
     animatedElements.forEach(el => {
@@ -385,6 +386,39 @@ function typeWriterEffect() {
     }
     
     typeTitle();
+}
+
+// Theme Toggle Functionality
+function initializeThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    
+    // Theme toggle event listener
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Add a small animation effect
+            themeToggle.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                themeToggle.style.transform = 'scale(1)';
+            }, 100);
+            
+            console.log('Theme switched to:', newTheme);
+        });
+        
+        console.log('Theme toggle initialized with theme:', savedTheme);
+    } else {
+        console.error('Theme toggle element not found!');
+    }
 }
 
 // Enhanced button click effects
@@ -543,6 +577,5 @@ if ('performance' in window) {
             const loadTime = perfData.loadEventEnd - perfData.navigationStart;
             console.log(`Page load time: ${loadTime}ms`);
         }, 0);
-        
     });
 }

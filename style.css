@@ -387,6 +387,7 @@ html {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -398,6 +399,7 @@ body {
   background-color: var(--custom-white);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center; /* CENTER ALIGN ALL TEXT */
 }
 
 *,
@@ -418,6 +420,7 @@ h6 {
   line-height: var(--line-height-tight);
   color: var(--color-text);
   letter-spacing: var(--letter-spacing-tight);
+  text-align: center; /* CENTER ALIGN HEADINGS */
 }
 
 h1 {
@@ -441,6 +444,7 @@ h6 {
 
 p {
   margin: 0 0 var(--space-16) 0;
+  text-align: center; /* CENTER ALIGN PARAGRAPHS */
 }
 
 a {
@@ -493,6 +497,7 @@ pre code {
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  text-align: center; /* CENTER ALIGN BUTTON TEXT */
 }
 
 .btn:focus-visible {
@@ -589,6 +594,7 @@ pre code {
   background: var(--custom-red);
   color: var(--custom-white);
   box-shadow: var(--custom-shadow);
+  text-align: center; /* CENTER ALIGN */
 }
 
 .btn-primary:hover {
@@ -613,6 +619,7 @@ pre code {
   background: transparent;
   color: var(--custom-black);
   border: 2px solid var(--custom-black);
+  text-align: center; /* CENTER ALIGN */
 }
 
 .btn-outline:hover {
@@ -731,6 +738,7 @@ pre code {
 .hero-container {
   max-width: 800px;
   padding: 2rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .hero-title {
@@ -741,6 +749,7 @@ pre code {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease forwards;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .hero-subtitle {
@@ -750,6 +759,7 @@ pre code {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease 0.2s forwards;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .hero-description {
@@ -759,6 +769,7 @@ pre code {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease 0.4s forwards;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .hero-buttons {
@@ -769,6 +780,7 @@ pre code {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease 0.6s forwards;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .hero-scroll {
@@ -792,6 +804,7 @@ pre code {
 /* Sections */
 .section {
   padding: 6rem 0;
+  text-align: center; /* CENTER ALIGN SECTIONS */
 }
 
 .section:nth-child(even) {
@@ -802,6 +815,7 @@ pre code {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  text-align: center; /* CENTER ALIGN CONTAINER */
 }
 
 .section-header {
@@ -814,6 +828,7 @@ pre code {
   font-weight: 700;
   color: var(--custom-black);
   margin-bottom: 1rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .section-line {
@@ -830,6 +845,11 @@ pre code {
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
   align-items: center;
+  text-align: center; /* CENTER ALIGN */
+}
+
+.about-text {
+  text-align: center; /* CENTER ALIGN */
 }
 
 .about-text p {
@@ -837,11 +857,13 @@ pre code {
   line-height: 1.8;
   margin-bottom: 1rem;
   color: var(--color-text-secondary);
+  text-align: center; /* CENTER ALIGN */
 }
 
 .about-stats {
   display: grid;
   gap: 2rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .stat-item {
@@ -868,11 +890,13 @@ pre code {
   font-weight: 700;
   color: var(--custom-red);
   margin-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .stat-item p {
   color: var(--color-text-secondary);
   font-weight: 500;
+  text-align: center; /* CENTER ALIGN */
 }
 
 /* Education Timeline */
@@ -880,6 +904,7 @@ pre code {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .timeline::before {
@@ -897,18 +922,19 @@ pre code {
   position: relative;
   margin-bottom: 3rem;
   width: 50%;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .timeline-item:nth-child(odd) {
   left: 0;
   padding-right: 2rem;
-  text-align: right;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .timeline-item:nth-child(even) {
   left: 50%;
   padding-left: 2rem;
-  text-align: left;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .timeline-marker {
@@ -941,6 +967,7 @@ pre code {
   box-shadow: var(--custom-shadow);
   transition: transform 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .timeline-content {
@@ -956,6 +983,7 @@ pre code {
   font-size: 1.2rem;
   color: var(--custom-black);
   margin-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .timeline-content h3 {
@@ -965,11 +993,13 @@ pre code {
 .timeline-content h4 {
   color: var(--custom-red);
   margin-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .timeline-date {
   color: var(--color-text-secondary);
   font-style: italic;
+  text-align: center; /* CENTER ALIGN */
 }
 
 /* Skills Section */
@@ -977,6 +1007,7 @@ pre code {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .skill-category {
@@ -986,6 +1017,7 @@ pre code {
   box-shadow: var(--custom-shadow);
   transition: transform 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .skill-category {
@@ -1003,6 +1035,7 @@ pre code {
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--custom-red);
   padding-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .skill-category h3 {
@@ -1013,6 +1046,7 @@ pre code {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center; /* CENTER ALIGN TAGS */
 }
 
 .skill-tag {
@@ -1025,6 +1059,7 @@ pre code {
   border: 1px solid var(--custom-red);
   transition: all 0.3s ease;
   cursor: pointer;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .skill-tag:hover {
@@ -1036,6 +1071,7 @@ pre code {
 /* Certificates Section */
 .certificates {
   background: var(--custom-white);
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .certificates {
@@ -1044,6 +1080,7 @@ pre code {
 
 .certificate-provider-section {
   margin-bottom: 3rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .provider-title {
@@ -1074,6 +1111,7 @@ pre code {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .certificate-card {
@@ -1086,6 +1124,7 @@ pre code {
   align-items: flex-start;
   gap: 1.5rem;
   border: 2px solid transparent;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .certificate-card {
@@ -1121,6 +1160,7 @@ pre code {
 
 .certificate-content {
   flex: 1;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .certificate-title {
@@ -1128,6 +1168,7 @@ pre code {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .certificate-title {
@@ -1139,18 +1180,21 @@ pre code {
   font-size: 1rem;
   margin-bottom: 0.3rem;
   font-weight: 500;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .certificate-date {
   color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .certificate-details {
   color: var(--color-text-secondary);
   font-size: 0.8rem;
   line-height: 1.4;
+  text-align: center; /* CENTER ALIGN */
 }
 
 /* Projects Section */
@@ -1158,6 +1202,7 @@ pre code {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .project-card {
@@ -1168,6 +1213,7 @@ pre code {
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .project-card {
@@ -1186,12 +1232,16 @@ pre code {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
+  flex-direction: column; /* STACK VERTICALLY */
+  text-align: center; /* CENTER ALIGN */
 }
 
 .project-header h3 {
   font-size: 1.3rem;
   color: var(--custom-black);
   flex: 1;
+  text-align: center; /* CENTER ALIGN */
+  margin-bottom: 0.5rem;
 }
 
 [data-theme="dark"] .project-header h3 {
@@ -1202,18 +1252,21 @@ pre code {
   color: var(--custom-red);
   font-size: 0.9rem;
   font-weight: 500;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .project-card p {
   color: var(--color-text-secondary);
   margin-bottom: 1rem;
   line-height: 1.6;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center; /* CENTER ALIGN TAGS */
 }
 
 .project-tech span {
@@ -1234,6 +1287,7 @@ pre code {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .activity-card {
@@ -1265,6 +1319,7 @@ pre code {
   font-size: 1.2rem;
   color: var(--custom-black);
   margin-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .activity-card h3 {
@@ -1275,17 +1330,20 @@ pre code {
   color: var(--custom-red);
   margin-bottom: 0.5rem;
   font-weight: 500;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .activity-card span {
   color: var(--color-text-secondary);
   font-size: 0.9rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 /* Contact Section */
 .contact-content {
   max-width: 600px;
   margin: 0 auto;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .contact-item {
@@ -1299,6 +1357,8 @@ pre code {
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center; /* CENTER ALIGN */
+  justify-content: center; /* CENTER ALIGN ITEMS */
 }
 
 [data-theme="dark"] .contact-item {
@@ -1307,7 +1367,7 @@ pre code {
 }
 
 .contact-item:hover {
-  transform: translateX(10px);
+  transform: translateY(-5px);
 }
 
 .contact-icon {
@@ -1321,9 +1381,14 @@ pre code {
   border-radius: 50%;
 }
 
+.contact-details {
+  text-align: center; /* CENTER ALIGN */
+}
+
 .contact-details h3 {
   color: var(--custom-black);
   margin-bottom: 0.5rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .contact-details h3 {
@@ -1335,6 +1400,7 @@ pre code {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  text-align: center; /* CENTER ALIGN */
 }
 
 .contact-details a:hover {
@@ -1345,6 +1411,7 @@ pre code {
 .contact-details p {
   color: var(--color-text-secondary);
   margin: 0;
+  text-align: center; /* CENTER ALIGN */
 }
 
 /* Modal */
@@ -1388,6 +1455,7 @@ pre code {
   overflow-y: auto;
   transform: scale(0.8);
   transition: transform 0.3s ease;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .modal-content {
@@ -1418,9 +1486,14 @@ pre code {
   color: var(--custom-red);
 }
 
+.modal-body {
+  text-align: center; /* CENTER ALIGN */
+}
+
 .modal-body h2 {
   color: var(--custom-black);
   margin-bottom: 1rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 [data-theme="dark"] .modal-body h2 {
@@ -1431,6 +1504,7 @@ pre code {
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-align: center; /* CENTER ALIGN */
 }
 
 /* Animations */
@@ -1547,7 +1621,7 @@ pre code {
     left: 0 !important;
     padding-left: 3rem !important;
     padding-right: 0 !important;
-    text-align: left !important;
+    text-align: center !important; /* CENTER ALIGN ON MOBILE */
   }
 
   .timeline-marker {
@@ -1581,6 +1655,16 @@ pre code {
   .provider-title {
     font-size: 1.3rem;
     margin-bottom: 1rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
   }
 
   .container {

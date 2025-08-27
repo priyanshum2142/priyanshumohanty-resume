@@ -294,9 +294,9 @@ function setupAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
+    // Observe elements for animation - Added hackathon-card
     const animatedElements = document.querySelectorAll(
-        '.section-title, .about-text, .stat-item, .timeline-item, .skill-category, .project-card, .activity-card, .contact-item, .certificate-card'
+        '.section-title, .about-text, .stat-item, .timeline-item, .skill-category, .project-card, .hackathon-card, .activity-card, .contact-item, .certificate-card'
     );
     
     animatedElements.forEach(el => {
@@ -336,13 +336,32 @@ function setupAnimations() {
         });
     });
 
+    // Hackathon card hover effects
+    const hackathonCards = document.querySelectorAll('.hackathon-card');
+    hackathonCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.hackathon-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.2) rotate(5deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.hackathon-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            }
+        });
+    });
+
     // Contact item effects
     const contactItems = document.querySelectorAll('.contact-item');
     contactItems.forEach(item => {
         item.addEventListener('click', function() {
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
-                this.style.transform = 'translateX(10px)';
+                this.style.transform = 'translateY(-5px)';
             }, 100);
         });
     });

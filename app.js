@@ -4,12 +4,20 @@ const navMenu = document.getElementById('nav-menu');
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const projectCards = document.querySelectorAll('.project-card');
-const modal = document.getElementById('projectModal');
-const modalClose = document.querySelector('.modal-close');
-const modalOverlay = document.querySelector('.modal-overlay');
+const activityCards = document.querySelectorAll('.activity-card');
+const projectModal = document.getElementById('projectModal');
+const activityModal = document.getElementById('activityModal');
+const modalCloses = document.querySelectorAll('.modal-close');
+const modalOverlays = document.querySelectorAll('.modal-overlay');
 
-// Project data
+// Project data - Updated with new first project
 const projectsData = [
+    {
+        title: "Smart Vehicle Detection & Entry Logging System using Computer Vision",
+        location: "Pune",
+        date: "August 2025 - Present",
+        description: "Developed a computer vision–based system for real-time vehicle detection, classification (Car, Bus, Bike, Truck, Ambulance), license plate recognition, and automated entry logging. Implemented using Python, OpenCV, YOLOv8, EasyOCR, and Pandas with custom datasets for Indian vehicles. Integrated features include color-coded vehicle categorization, timestamped logging, and applicability to smart traffic, parking, and security systems."
+    },
     {
         title: "Computer Vision based Iron Man Hand HUD using OpenCV and MediaPipe",
         location: "Pune",
@@ -20,7 +28,7 @@ const projectsData = [
         title: "Design and Fabrication of 3D Printed Keychains for ISKCON",
         location: "Pune",
         date: "January 2025 to April 2025",
-        description: "Designed and fabricated custom 3D printed keychains for the International Society for Krishna Consciousness (ISKCON). This project involved creating detailed CAD models, optimizing designs for 3D printing, and managing the complete fabrication process. The keychains featured intricate religious symbols and were produced using advanced 3D printing techniques with post-processing for enhanced quality."
+        description: "Designed and fabricated custom 3D printed keychains for ISKCON. This project involved creating detailed CAD models, optimizing designs for 3D printing, and managing the complete fabrication process. From Blender modeling to printing on Creality K1 Max using PLA, we handled the full cycle — design, slicing (ORCA), post-processing, and packaging. A blend of modern fabrication and cultural value. The keychains featured intricate religious symbols and were produced using advanced 3D printing techniques with post-processing for enhanced quality."
     },
     {
         title: "Ornithopter: A Flapping-Wing Flying Prototype",
@@ -29,8 +37,8 @@ const projectsData = [
         description: "Built a biomimetic flapping-wing aircraft prototype inspired by bird flight mechanics. This innovative project explored the principles of ornithopter flight, involving aerodynamic analysis, mechanical design, and prototype fabrication. The ornithopter demonstrates the complex engineering challenges of replicating natural flight patterns in artificial systems."
     },
     {
-        title: "Arduino based Line Following Robot (IIT Bombay Robotics Workshop)",
-        location: "Mumbai",
+        title: "Arduino based Line Following Robot",
+        location: "IIT Bombay, Mumbai",
         date: "December 2023",
         description: "Developed an autonomous line-following robot using Arduino microcontroller as part of the IIT Bombay Robotics Workshop. The robot uses infrared sensors to detect and follow a predetermined path, demonstrating principles of autonomous navigation, sensor integration, and real-time control systems. This project provided hands-on experience with embedded programming and robotics fundamentals."
     },
@@ -39,6 +47,52 @@ const projectsData = [
         location: "Pune",
         date: "September 2023",
         description: "Built a multi-axis robotic arm with precise motor control using Arduino microcontroller, servo motors, and electromagnets. The robotic arm features multiple degrees of freedom and can perform pick-and-place operations. This project involved mechanical design, control system programming, and integration of various actuators to create a functional robotic manipulation system."
+    }
+];
+
+// Activity data - New with summaries
+const activitiesData = [
+    {
+        title: "Speech at the 4th BRICS SciTech Forum",
+        location: "Online (Hosted by RUDN University, Russia)",
+        date: "November 2023",
+        description: "Delivered an online presentation on Space Flight Mechanics and Space Structures at an international forum hosted by RUDN University, Russia, showcasing research and technical knowledge to a global audience."
+    },
+    {
+        title: "Event Team Member, Rotonity Club",
+        location: "SIT, Pune",
+        date: "August 2023 – September 2024",
+        description: "Actively involved in planning and executing robotics and automation events, coordinating with peers, and contributing to the smooth management of club activities."
+    },
+    {
+        title: "Design Team Member, SymbiTech",
+        location: "SIT, Pune",
+        date: "September 2023",
+        description: "Designed posters, graphics, and promotional materials for SymbiTech events, enhancing creativity, branding, and visual communication impact."
+    },
+    {
+        title: "Robotics Football Team Captain",
+        location: "PROTA - Annual College Sports Fest, SIT, Pune",
+        date: "October 2024",
+        description: "Led the Robotics Department football team in the annual sports fest, managing strategies, motivating players, and representing the department in inter-branch competitions making it till the semi finals."
+    },
+    {
+        title: "8 Ball Pool Winner",
+        location: "PROTA - Annual College Sports Fest, SIT, Pune",
+        date: "October 2024",
+        description: "Achieved first place in 8 Ball Pool at the annual sports fest, demonstrating precision, focus, and competitive spirit."
+    },
+    {
+        title: "Robotics Cricket Team Vice-Captain",
+        location: "PROTA - Annual Sports Fest, SIT, Pune",
+        date: "September 2023",
+        description: "Served as Vice-Captain of the Robotics Department cricket team, supporting leadership duties, boosting team morale, and ensuring effective on-field coordination."
+    },
+    {
+        title: "Presenter at Induction for R&A Batch 25-29",
+        location: "Department of Robotics and Automation, SIT, Pune",
+        date: "September 2023",
+        description: "Represented the Department of Robotics & Automation during the induction program by introducing clubs, sports, and co-curricular activities. Guided new students and parents in understanding campus life, fostering a smooth transition into college."
     }
 ];
 
@@ -51,6 +105,7 @@ function initializeApp() {
     setupNavigation();
     setupScrollEffects();
     setupProjectModals();
+    setupActivityModals();
     setupAnimations();
     initializeThemeToggle();
     setTimeout(() => {
@@ -202,7 +257,7 @@ function handleScrollAnimations() {
     });
 }
 
-// Project modal functionality - Fixed
+// Project modal functionality
 function setupProjectModals() {
     // Add click listeners to project cards
     projectCards.forEach((card, index) => {
@@ -225,25 +280,42 @@ function setupProjectModals() {
         });
     });
 
-    // Modal close events
-    if (modalClose) {
-        modalClose.addEventListener('click', closeProjectModal);
-    }
+    // Modal close events for project modal
+    modalCloses.forEach(close => {
+        close.addEventListener('click', function() {
+            if (this.closest('#projectModal')) {
+                closeProjectModal();
+            } else if (this.closest('#activityModal')) {
+                closeActivityModal();
+            }
+        });
+    });
     
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', closeProjectModal);
-    }
+    modalOverlays.forEach(overlay => {
+        overlay.addEventListener('click', function() {
+            if (this.closest('#projectModal')) {
+                closeProjectModal();
+            } else if (this.closest('#activityModal')) {
+                closeActivityModal();
+            }
+        });
+    });
     
     // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-            closeProjectModal();
+        if (e.key === 'Escape') {
+            if (projectModal && projectModal.classList.contains('active')) {
+                closeProjectModal();
+            }
+            if (activityModal && activityModal.classList.contains('active')) {
+                closeActivityModal();
+            }
         }
     });
 }
 
 function openProjectModal(index) {
-    if (!modal || !projectsData[index]) return;
+    if (!projectModal || !projectsData[index]) return;
     
     const project = projectsData[index];
     
@@ -259,22 +331,82 @@ function openProjectModal(index) {
     if (modalDescription) modalDescription.textContent = project.description;
     
     // Show modal
-    modal.classList.remove('hidden');
+    projectModal.classList.remove('hidden');
     setTimeout(() => {
-        modal.classList.add('active');
+        projectModal.classList.add('active');
     }, 10);
     
     document.body.style.overflow = 'hidden';
 }
 
 function closeProjectModal() {
-    if (!modal) return;
+    if (!projectModal) return;
     
-    modal.classList.remove('active');
+    projectModal.classList.remove('active');
     document.body.style.overflow = 'auto';
     
     setTimeout(() => {
-        modal.classList.add('hidden');
+        projectModal.classList.add('hidden');
+    }, 300);
+}
+
+// Activity modal functionality - NEW
+function setupActivityModals() {
+    // Add click listeners to activity cards
+    activityCards.forEach((card, index) => {
+        card.style.cursor = 'pointer';
+        
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            openActivityModal(index);
+        });
+
+        // Enhanced hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+            this.style.boxShadow = '0 8px 30px rgba(220, 38, 38, 0.3)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+        });
+    });
+}
+
+function openActivityModal(index) {
+    if (!activityModal || !activitiesData[index]) return;
+    
+    const activity = activitiesData[index];
+    
+    // Update modal content
+    const modalTitle = document.getElementById('activityModalTitle');
+    const modalLocation = document.getElementById('activityModalLocation');
+    const modalDate = document.getElementById('activityModalDate');
+    const modalDescription = document.getElementById('activityModalDescription');
+    
+    if (modalTitle) modalTitle.textContent = activity.title;
+    if (modalLocation) modalLocation.textContent = `Location: ${activity.location}`;
+    if (modalDate) modalDate.textContent = `Date: ${activity.date}`;
+    if (modalDescription) modalDescription.textContent = activity.description;
+    
+    // Show modal
+    activityModal.classList.remove('hidden');
+    setTimeout(() => {
+        activityModal.classList.add('active');
+    }, 10);
+    
+    document.body.style.overflow = 'hidden';
+}
+
+function closeActivityModal() {
+    if (!activityModal) return;
+    
+    activityModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    
+    setTimeout(() => {
+        activityModal.classList.add('hidden');
     }, 300);
 }
 
@@ -317,9 +449,9 @@ function setupAnimations() {
         });
     });
 
-    // Activity card hover effects
-    const activityCards = document.querySelectorAll('.activity-card');
-    activityCards.forEach(card => {
+    // Activity card hover effects - Updated for modal functionality
+    const activityCardsForHover = document.querySelectorAll('.activity-card');
+    activityCardsForHover.forEach(card => {
         card.addEventListener('mouseenter', function() {
             const icon = this.querySelector('.activity-icon');
             if (icon) {

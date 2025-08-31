@@ -17,7 +17,7 @@
   --border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* FIXED DARK MODE VARIABLES */
+/* DARK MODE VARIABLES */
 [data-theme="dark"] {
   --custom-black: #ffffff;
   --custom-white: #1a1a1a;
@@ -34,7 +34,7 @@
   --border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* FIXED Theme Toggle Styles */
+/* Theme Toggle Styles */
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -161,7 +161,7 @@ a:hover {
   color: var(--custom-red-hover);
 }
 
-/* Profile Photo Styles */
+/* PROFILE PHOTO */
 .profile-photo {
   width: 200px;
   height: 200px;
@@ -172,6 +172,7 @@ a:hover {
   box-shadow: var(--custom-shadow);
   transition: all 0.3s ease;
   position: relative;
+  display: block;
 }
 
 .profile-photo:hover {
@@ -184,6 +185,7 @@ a:hover {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .profile-photo:hover img {
@@ -376,6 +378,16 @@ a:hover {
   max-width: 800px;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .hero-title {
@@ -530,12 +542,17 @@ a:hover {
   text-align: center !important;
 }
 
+/* FIXED ABOUT STATS - PERFECT CENTER ALIGNMENT */
 .about-stats {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  align-items: stretch;
   text-align: center !important;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .stat-item {
@@ -547,6 +564,11 @@ a:hover {
   transition: transform 0.3s ease;
   border: 1px solid var(--border-color);
   min-width: 150px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .stat-item:hover {
@@ -565,6 +587,7 @@ a:hover {
   color: var(--text-secondary);
   font-weight: 500;
   text-align: center !important;
+  margin: 0;
 }
 
 /* Education Timeline */
@@ -895,7 +918,7 @@ a:hover {
   font-size: 0.8rem;
 }
 
-/* UNIFORM GALLERY CARD STYLING */
+/* GALLERY SECTION - FIXED CENTER ALIGNMENT */
 .gallery-subsection {
   margin-bottom: 5rem;
   text-align: center !important;
@@ -935,11 +958,14 @@ a:hover {
   gap: 2rem;
   justify-content: center;
   align-items: stretch;
+  justify-items: center;
   padding: 0 1rem;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* CLEAN UNIFORM GALLERY CARDS */
+/* GALLERY CARDS - PERFECT CENTER ALIGNMENT */
 .gallery-project-card {
   background: var(--bg-primary);
   padding: 2rem;
@@ -948,13 +974,15 @@ a:hover {
   text-align: center !important;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  max-width: 350px;
   width: 100%;
+  max-width: 350px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 280px;
+  margin: 0 auto;
 }
 
 .gallery-project-card:hover {
@@ -967,6 +995,7 @@ a:hover {
   font-size: 4rem;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .gallery-project-card:hover .gallery-project-icon {
@@ -980,6 +1009,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .gallery-project-content h3 {
@@ -1010,7 +1040,7 @@ a:hover {
   margin-top: 0.5rem;
 }
 
-/* GALLERY MODAL STYLES */
+/* GALLERY MODAL - FIXED CENTER ALIGNMENT */
 .gallery-modal {
   position: fixed;
   top: 0;
@@ -1052,6 +1082,7 @@ a:hover {
   transform: scale(0.8);
   transition: all 0.4s ease;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  margin: 0 auto;
 }
 
 .gallery-modal.active .gallery-modal-content {
@@ -1088,12 +1119,14 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 
 .gallery-modal-header h2 {
   color: var(--custom-red) !important;
   font-size: 1.5rem;
   margin: 0;
+  text-align: center;
 }
 
 .gallery-counter {
@@ -1105,7 +1138,7 @@ a:hover {
   font-weight: 600;
 }
 
-/* CAROUSEL CONTAINER */
+/* CAROUSEL CONTAINER - FIXED MOBILE IMAGE ALIGNMENT */
 .gallery-carousel-container {
   position: relative;
   width: 100%;
@@ -1135,6 +1168,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   background: var(--bg-secondary);
+  padding: 1rem;
 }
 
 .gallery-slide img {
@@ -1146,6 +1180,8 @@ a:hover {
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 .gallery-slide img:hover {
@@ -1205,6 +1241,7 @@ a:hover {
 .gallery-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
   padding: 1.5rem 2rem;
 }
@@ -1508,6 +1545,7 @@ a:hover {
   transform: scale(0.8);
   transition: transform 0.3s ease;
   text-align: center !important;
+  margin: 0 auto;
 }
 
 .modal.active .modal-content {
@@ -1583,7 +1621,44 @@ a:hover {
   transform: translateY(0);
 }
 
-/* Mobile responsive styles */
+/* TABLET RESPONSIVE (768px - 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .about-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    min-width: 180px;
+    max-width: 220px;
+  }
+  
+  .gallery-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+    justify-items: center;
+  }
+  
+  .gallery-modal-content {
+    width: 90vw;
+    margin: 1rem;
+  }
+  
+  .gallery-carousel-container {
+    aspect-ratio: 16/10;
+  }
+  
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* MOBILE RESPONSIVE (≤768px) - FIXED ALIGNMENT ISSUES */
 @media screen and (max-width: 768px) {
   .theme-toggle {
     margin-left: 0;
@@ -1608,6 +1683,7 @@ a:hover {
     font-size: 12px;
   }
 
+  /* FIXED MOBILE NAVIGATION */
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -1620,14 +1696,39 @@ a:hover {
     box-shadow: var(--custom-shadow);
     padding: 2rem 0;
     gap: 1rem;
+    z-index: 999;
   }
 
   .nav-menu.active {
     left: 0;
   }
+  
+  .nav-item {
+    text-align: center !important;
+    width: 100%;
+  }
 
   .nav-toggle {
     display: flex;
+  }
+
+  /* FIXED MOBILE HERO */
+  .hero-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-title {
@@ -1641,11 +1742,63 @@ a:hover {
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .hero-buttons .btn {
+    width: 200px;
+    text-align: center;
   }
 
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 1.5rem;
+  }
+
+  /* FIXED MOBILE ABOUT STATS - PERFECT CENTER ALIGNMENT */
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: none;
+  }
+
+  .stat-item {
+    width: 100%;
+    max-width: 280px;
+    min-width: auto;
+    flex: none;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+  
+  .stat-item p {
+    font-size: 0.95rem;
+  }
+
+  /* FIXED MOBILE GALLERY - PERFECT CENTER ALIGNMENT */
   .gallery-projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
+    justify-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .gallery-project-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
   }
   
   .gallery-modal-content {
@@ -1658,6 +1811,15 @@ a:hover {
     aspect-ratio: 4/3;
   }
   
+  .gallery-slide {
+    padding: 0.5rem;
+  }
+  
+  .gallery-slide img {
+    max-width: 95%;
+    max-height: 95%;
+  }
+  
   .gallery-modal-header {
     padding: 1rem;
     flex-direction: column;
@@ -1667,6 +1829,7 @@ a:hover {
   
   .gallery-modal-header h2 {
     font-size: 1.2rem;
+    text-align: center;
   }
   
   .gallery-nav-btn {
@@ -1687,29 +1850,23 @@ a:hover {
     font-size: 3rem;
   }
 
+  /* FIXED MOBILE SECTIONS */
   .section-title {
     font-size: 2rem;
+    text-align: center !important;
   }
 
   .container {
     padding: 0 1rem;
+    text-align: center !important;
   }
 
   .section {
     padding: 4rem 0;
+    text-align: center !important;
   }
 
-  .about-stats {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .stat-item {
-    flex: 1;
-    min-width: 120px;
-    max-width: 150px;
-  }
-
+  /* FIXED MOBILE GRIDS */
   .skills-grid {
     flex-direction: column;
     align-items: center;
@@ -1718,6 +1875,7 @@ a:hover {
   .skill-category {
     max-width: 100%;
     width: 100%;
+    max-width: 350px;
   }
 
   .certificates-grid {
@@ -1728,6 +1886,7 @@ a:hover {
   .certificate-card {
     max-width: 100%;
     width: 100%;
+    max-width: 350px;
   }
 
   .projects-grid {
@@ -1738,6 +1897,7 @@ a:hover {
   .project-card {
     max-width: 100%;
     width: 100%;
+    max-width: 350px;
   }
 
   .hackathons-grid {
@@ -1748,6 +1908,7 @@ a:hover {
   .hackathon-card {
     max-width: 100%;
     width: 100%;
+    max-width: 400px;
   }
 
   .activities-grid {
@@ -1758,14 +1919,17 @@ a:hover {
   .activity-card {
     max-width: 100%;
     width: 100%;
+    max-width: 350px;
   }
 
   .contact-item {
     max-width: 100%;
     width: 100%;
+    max-width: 350px;
   }
 }
 
+/* SMALL MOBILE RESPONSIVE (≤480px) - ULTRA FIXED ALIGNMENT */
 @media screen and (max-width: 480px) {
   .profile-photo {
     width: 120px;
@@ -1788,9 +1952,45 @@ a:hover {
     font-size: 1.8rem;
   }
 
+  /* ULTRA FIXED MOBILE ABOUT STATS */
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
   .stat-item {
-    min-width: 100px;
-    max-width: 120px;
+    width: 100%;
+    max-width: 250px;
+    min-width: auto;
+    padding: 1.2rem 0.8rem;
+    margin: 0 auto;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.8rem;
+  }
+  
+  .stat-item p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  /* ULTRA FIXED MOBILE GALLERY */
+  .gallery-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .gallery-project-card {
+    max-width: 280px;
+    padding: 1.5rem;
   }
 
   .gallery-carousel-container {
@@ -1829,8 +2029,68 @@ a:hover {
   .gallery-project-icon {
     font-size: 2.5rem;
   }
+  
+  /* ULTRA FIXED ALL OTHER CARDS */
+  .skill-category,
+  .certificate-card,
+  .project-card,
+  .hackathon-card,
+  .activity-card,
+  .contact-item {
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* EXTRA SMALL DEVICES (≤360px) */
+@media screen and (max-width: 360px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .about-stats {
+    padding: 0;
+    gap: 0.8rem;
+  }
+  
+  .stat-item {
+    max-width: 220px;
+    padding: 1rem 0.5rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+  
+  .stat-item p {
+    font-size: 0.85rem;
+  }
+  
+  .gallery-projects-grid {
+    max-width: 250px;
+    padding: 0;
+  }
+  
+  .gallery-project-card {
+    max-width: 240px;
+    padding: 1.2rem;
+  }
+  
+  .gallery-project-icon {
+    font-size: 2.2rem;
+  }
+  
+  .gallery-project-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .gallery-project-content p {
+    font-size: 0.9rem;
+  }
 }
 
 .hidden {
   display: none;
 }
+

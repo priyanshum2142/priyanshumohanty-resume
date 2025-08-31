@@ -4,7 +4,6 @@ const projectsData = [
         title: "Smart Vehicle Detection & Entry Logging System",
         location: "Symbiosis Institute of Technology, Pune",
         date: "August 2025 - Present",
-        description: "Developed real-time vehicle detection and automated entry logging with 95% accuracy for smart traffic management systems using Computer Vision, YOLOv8, EasyOCR, and OpenCV."
     },
     {
         title: "Iron Man Hand HUD",

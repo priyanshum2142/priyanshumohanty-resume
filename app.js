@@ -3,7 +3,7 @@ const projectsData = [
     {
         title: "Smart Vehicle Detection & Entry Logging System",
         location: "Symbiosis Institute of Technology, Pune",
-        date: "August 2025 - Present",
+        date: "August 2025 - Present"
     },
     {
         title: "Iron Man Hand HUD",
